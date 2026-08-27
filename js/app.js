@@ -76,3 +76,82 @@ window.addEventListener("scroll", () => {
     }
 
 });
+/* ===========================
+   AUTOMATIC ARTWORK COUNTER
+=========================== */
+
+async function updateArtworkCount() {
+
+    const counter = document.getElementById("artworks-count");
+
+    if (!counter) return;
+
+    try {
+
+        const response = await fetch("gallery.html");
+
+        if (!response.ok) {
+            throw new Error("Gallery page not found");
+        }
+
+        const galleryHTML = await response.text();
+
+        const parser = new DOMParser();
+        const galleryDoc = parser.parseFromString(
+            galleryHTML,
+            "text/html"
+        );
+
+        const artworks = galleryDoc.querySelectorAll(
+            ".full-art-card"
+        );
+
+        const totalArtworks = artworks.length;
+
+        let current = 0;
+
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function animate(currentTime) {
+
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            current = Math.floor(
+                progress * totalArtworks
+            );
+
+            counter.textContent = current;
+
+            if (progress < 1) {
+
+                requestAnimationFrame(animate);
+
+            } else {
+
+                counter.textContent = totalArtworks;
+
+            }
+
+        }
+
+        requestAnimationFrame(animate);
+
+    } catch (error) {
+
+        console.error(
+            "Artwork counter error:",
+            error
+        );
+
+    }
+
+}
+
+window.addEventListener(
+    "DOMContentLoaded",
+    updateArtworkCount
+);

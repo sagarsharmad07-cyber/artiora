@@ -41,7 +41,14 @@
 
     <ul class="nav-links" id="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li class="gallery-dropdown">
+    <a href="#gallery">Gallery ▾</a>
+
+    <ul class="dropdown-menu">
+        <li><a href="#artists">Artist's Collection</a></li>
+        <li><a href="#mentors">Mentor's Collection</a></li>
+    </ul>
+</li>
         <li><a href="#about">About</a></li>
         <li><a href="#commission">Commission</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -135,186 +142,285 @@
 <section id="gallery" class="gallery-section reveal">
 
     <div class="section-title">
+
         <p>CURATED COLLECTION</p>
 
-<h2>Timeless Masterpieces</h2>
+        <h2>Timeless Masterpieces</h2>
 
-<span class="gallery-subtitle">
-Each artwork is handcrafted to preserve emotions,
-stories and timeless beauty.
-</span>
-    </div>
-
-
-    <div class="gallery-grid">
-        <div class="art-card">
-
-    <img class="gallery-img"
-src="assets/images/gallery/art-001.jpg"
-alt="David Study">
-
-    <div class="art-overlay">
-        <p class="art-id">
-ART-001
-</p>
-
-<h3>
-David Study
-</h3>
-
-<p class="art-details">
-Sacred Charcoal Art • 24 × 36 in
-</p>
-
-<p class="art-year">
-2026 Collection
-</p>
-        <p>Original Painting</p>
-
-        <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-001%20(David%20Study).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-        Request Artwork
-</a>
-
-        <span class="status">
-            ● Available on Request
+        <span class="gallery-subtitle">
+            Each artwork is handcrafted to preserve emotions,
+            stories and timeless beauty.
         </span>
+
     </div>
 
-</div>
 
-<div class="art-card">
+    <!-- =========================
+         ARTISTS' COLLECTION
+    ========================== -->
 
-    <img class="gallery-img"
-src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08"
-alt="For Bhavya Ji">
-    <div class="art-overlay">
-        <p class="art-id">ART-002</p>
+    <div class="collection-column" id="artists">
 
-<h3>For Bhavya ji</h3>
+        <div class="collection-heading">
 
-<p class="art-details">Oil on Canvas • 18 × 24 in</p>
+            <p>THE ARTISTS</p>
 
-<p class="art-year">2026 Collection</p>
-        <p>Modern Artwork</p>
+            <h3>Artist's Collection</h3>
 
-         <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-002%20(Bhavya%20Collection).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-        Request Artwork
-</a>
+            <span>Original works by Artist's of ARTIORA</span>
 
-        <span class="status">
-            ● Available on Request
-        </span>
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <!-- ART 001 -->
+
+            <div class="art-card">
+
+                <img
+                    class="gallery-img"
+                    src="assets/images/gallery/art-001.jpg"
+                    alt="David Study"
+                >
+
+                <div class="art-overlay">
+
+                    <p class="art-id">ART-001</p>
+
+                    <h3>David Study</h3>
+
+                    <p class="art-details">
+                        Sacred Charcoal Art • 24 × 36 in
+                    </p>
+
+                    <p class="art-year">
+                        2026 Collection
+                    </p>
+
+                    <p>Original Painting</p>
+
+                    <a
+                        href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20ART-001%20(David%20Study).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F"
+                        class="view-btn"
+                        target="_blank"
+                    >
+                        Request Artwork
+                    </a>
+
+                    <span class="status">
+                        ● Available on Request
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ART 002 -->
+
+            <div class="art-card">
+
+                <img
+                    class="gallery-img"
+                    src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08"
+                    alt="For Bhavya Ji"
+                >
+
+                <div class="art-overlay">
+
+                    <p class="art-id">ART-002</p>
+
+                    <h3>For Bhavya Ji</h3>
+
+                    <p class="art-details">
+                        Oil on Canvas • 18 × 24 in
+                    </p>
+
+                    <p class="art-year">
+                        2026 Collection
+                    </p>
+
+                    <p>Modern Artwork</p>
+
+                    <a
+                        href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20ART-002%20(For%20Bhavya%20Ji).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F"
+                        class="view-btn"
+                        target="_blank"
+                    >
+                        Request Artwork
+                    </a>
+
+                    <span class="status">
+                        ● Available on Request
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ARTISTS EXPLORE BUTTON -->
+
+        <div class="collection-action">
+
+            <a href="gallery.html" class="explore-gallery-btn">
+
+                <span>✦</span>
+
+                Explore Full Gallery
+
+                <span class="arrow">→</span>
+
+            </a>
+
+        </div>
+
     </div>
 
-</div>
 
-<div class="art-card">
 
-    <img class="gallery-img"
-src="https://images.unsplash.com/photo-1561214115-f2f134cc4912"
-alt="For Sagar Ji">
+    <!-- =========================
+         MENTORS' COLLECTION
+    ========================== -->
 
-    <div class="art-overlay">
-        <p class="art-id">ART-003</p>
+    <div class="collection-column mentor-collection" id="mentors">
 
-<h3>For Sagar</h3>
+        <div class="collection-heading">
 
-<p class="art-details">Oil on Canvas • 30 × 40 in</p>
+            <p>THE MENTORS</p>
 
-<p class="art-year">2026 Collection</p>
-        <p>Landscape Painting</p>
+            <h3>Mentors' Collection</h3>
 
-        <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-003%20(Nature%20Harmony).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-        Request Artwork
-</a>
-        <span class="status">
-            ● Available on Request
-        </span>
+            <span>Selected works by their teachers</span>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <!-- MENTOR 001 -->
+
+            <div class="art-card">
+
+                <img
+                    class="gallery-img"
+                    src="assets/images/gallery/mentor-001.jpg"
+                    alt="Mentor Artwork One"
+                >
+
+                <div class="art-overlay">
+
+                    <p class="art-id">
+                        MTR-001
+                    </p>
+
+                    <h3>
+                        Mentor Artwork I
+                    </h3>
+
+                    <p class="art-details">
+                        Original Painting
+                    </p>
+
+                    <p class="art-year">
+                        Mentors' Collection
+                    </p>
+
+                    <p>
+                        Selected Artwork
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="view-btn"
+                    >
+                        Enquire Artwork
+                    </a>
+
+                    <span class="status">
+                        ● Available on Request
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENTOR 002 -->
+
+            <div class="art-card">
+
+                <img
+                    class="gallery-img"
+                    src="assets/images/gallery/mentor-002.jpg"
+                    alt="Mentor Artwork Two"
+                >
+
+                <div class="art-overlay">
+
+                    <p class="art-id">
+                        MTR-002
+                    </p>
+
+                    <h3>
+                        Mentor Artwork II
+                    </h3>
+
+                    <p class="art-details">
+                        Original Artwork
+                    </p>
+
+                    <p class="art-year">
+                        Mentors' Collection
+                    </p>
+
+                    <p>
+                        Selected Artwork
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="view-btn"
+                    >
+                        Enquire Artwork
+                    </a>
+
+                    <span class="status">
+                        ● Available on Request
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENTORS EXPLORE BUTTON -->
+
+        <div class="collection-action">
+
+            <a href="gallery.html" class="explore-gallery-btn">
+
+                <span>✦</span>
+
+                Explore Full Gallery
+
+                <span class="arrow">→</span>
+
+            </a>
+
+        </div>
+
     </div>
-
-</div>
-
-<div class="art-card">
-
-    <img class="gallery-img"
-src="assets/images/gallery/art-004.jpg"
-alt="Lord Ganesha Artwork">
-
-    <div class="art-overlay">
-        <p class="art-id">ART-004</p>
-
-<h3>Lord Ganesha Artwork</h3>
-
-<p class="art-details">Charcoal on Premium Paper • 30 × 40 in</p>
-
-<p class="art-year">2026 Collection</p>
-        <p>Portrait Art</p>
-
-       <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-004%20(Lord%20Ganesha%20Artwork).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-       Request Artwork
-</a>
-
-        <span class="status">
-            ● Available on Request
-        </span>
-    </div>
-
-</div>
-
-<div class="art-card">
-
-    <img class="gallery-img"
-src="https://images.unsplash.com/photo-1549490349-8643362247b5"
-alt="Royal Expression">
-
-    <div class="art-overlay">
-        <p class="art-id">ART-005</p>
-
-<h3>Royal Expression</h3>
-
-<p class="art-details">Oil on Canvas • 30 × 40 in</p>
-
-<p class="art-year">2026 Collection</p>
-        <p>Canvas Collection</p>
-
-        <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-005%20(Royal%20Expression).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-        Request Artwork
-</a>
-        <span class="status">
-            ● Available on Request
-        </span>
-    </div>
-
-</div>
-
-<div class="art-card">
-
-   <img class="gallery-img"
-src="https://images.unsplash.com/photo-1561214115-f2f134cc4912"
-alt="Silent Forest">
-
-    <div class="art-overlay">
-        <p class="art-id">ART-006</p>
-
-<h3>Silent Forest</h3>
-
-<p class="art-details">Oil on Canvas • 30 × 40 in</p>
-
-<p class="art-year">2026 Collection</p>
-        <p>Landscape Artwork</p>
-
-        <a href="https://wa.me/917568035595?text=Hi%20Shubham,%20I'm%20interested%20in%20Artwork%20AR-006%20(Silent%20Forest).%20Could%20you%20please%20share%20the%20price,%20availability%20and%20more%20details%3F" class="view-btn" target="_blank">
-        Request Artwork
-</a>
-
-        <span class="status">
-            ● Available on Request
-        </span>
-    </div>
-
-</div>
 
 </section>
+
 <section class="art-message">
 
     <div class="message-content">

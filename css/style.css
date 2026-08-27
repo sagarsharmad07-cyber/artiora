@@ -80,6 +80,61 @@ body{
     gap:8px;
     list-style:none;
 }
+/* Gallery Dropdown */
+
+.gallery-dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%) translateY(10px);
+
+    min-width:210px;
+    padding:10px;
+
+    list-style:none;
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s ease;
+}
+
+.gallery-dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(4px);
+}
+
+.dropdown-menu li{
+    width:100%;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:11px 14px;
+    border-radius:12px;
+    white-space:nowrap;
+    text-decoration:none;
+    color:#222;
+}
+
+.dropdown-menu a:hover{
+    background:#111;
+    color:#fff;
+}
 .menu-toggle{
     display:none;
     font-size:30px;
@@ -1284,4 +1339,802 @@ letter-spacing:1px;
 .reveal.active{
     opacity:1;
     transform:translateY(0);
+}
+/* ===========================
+   COLLECTION LAYOUT
+=========================== */
+
+.collection-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+}
+
+.collection-column:first-child{
+    padding-right:30px;
+    border-right:1px solid rgba(31,31,31,.15);
+}
+
+.collection-column:last-child{
+    padding-left:30px;
+}
+.collection-column .gallery-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+}
+@media (max-width: 768px){
+
+    .collection-layout{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+    .collection-column:first-child{
+        padding-right:0;
+        border-right:none;
+        padding-bottom:60px;
+        border-bottom:1px solid rgba(31,31,31,.15);
+    }
+
+    .collection-column:last-child{
+        padding-left:0;
+    }
+
+    .collection-column .gallery-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+/* =========================================
+   PREMIUM ARTISTS & MENTORS COLLECTION
+========================================= */
+
+.collection-column {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    padding: 65px 0 75px;
+}
+
+.collection-column + .collection-column {
+    border-top: 1px solid rgba(50, 50, 50, 0.12);
+    padding-top: 85px;
+}
+
+
+/* Collection Heading */
+
+.collection-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collection-heading p {
+    margin: 0 0 9px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: #a18a5c;
+}
+
+.collection-heading h3 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 40px;
+    font-weight: 500;
+
+    color: #252525;
+}
+
+.collection-heading span {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    color: #777;
+
+    letter-spacing: .2px;
+}
+
+
+/* Small elegant line */
+
+.collection-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 1px;
+
+    background: #b99b5f;
+
+    margin: 18px auto 0;
+}
+
+
+/* =========================================
+   TWO FEATURED PAINTINGS
+========================================= */
+
+.collection-column .gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    max-width: 1080px;
+
+    margin: 0 auto;
+}
+
+.collection-column .art-card {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, .09);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.collection-column .art-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, .14);
+}
+
+.collection-column .gallery-img {
+    width: 100%;
+    height: 500px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.collection-column .art-card:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   ARTWORK OVERLAY
+========================================= */
+
+.collection-column .art-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.88),
+            rgba(0,0,0,.08) 72%
+        );
+}
+
+.collection-column .art-id {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,.72);
+}
+
+.collection-column .art-overlay h3 {
+    margin: 0 0 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+.collection-column .art-details {
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,.82);
+}
+
+.collection-column .art-year {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,.65);
+}
+
+
+/* Request button */
+
+.collection-column .view-btn {
+    width: fit-content;
+
+    margin-top: 16px;
+
+    padding: 10px 19px;
+
+    border: 1px solid rgba(255,255,255,.65);
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 12px;
+
+    transition: .3s ease;
+}
+
+.collection-column .view-btn:hover {
+    background: white;
+
+    color: #222;
+
+    border-color: white;
+}
+
+
+/* Status */
+
+.collection-column .status {
+    margin-top: 10px;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.12);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 11px;
+
+    color: rgba(255,255,255,.82);
+}
+
+
+/* =========================================
+   EXPLORE FULL GALLERY
+========================================= */
+
+.collection-action {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 38px;
+}
+
+.explore-gallery-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 23px;
+
+    border: 1px solid #b69a62;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #5c4c31;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: .7px;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        transform .35s ease;
+}
+
+.explore-gallery-btn span:first-child {
+    color: #b69a62;
+
+    font-size: 10px;
+}
+
+.explore-gallery-btn .arrow {
+    transition: transform .3s ease;
+}
+
+.explore-gallery-btn:hover {
+    background: #292929;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+.explore-gallery-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .collection-column {
+        width: 90%;
+
+        padding: 50px 0 60px;
+    }
+
+    .collection-column + .collection-column {
+        padding-top: 65px;
+    }
+
+    .collection-column .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .collection-heading h3 {
+        font-size: 32px;
+    }
+
+    .collection-column .art-card,
+    .collection-column .gallery-img {
+        min-height: 460px;
+        height: 460px;
+    }
+
+}
+/* =========================================================
+   ARTIORA — FULL GALLERY PAGE
+========================================================= */
+
+.gallery-page {
+    background: #efe8dc;
+    color: #1d1d1d;
+}
+
+/* PAGE HERO */
+
+.gallery-page-hero {
+    min-height: 55vh;
+    padding: 150px 8% 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.gallery-page-hero p {
+    margin: 0 0 18px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.gallery-page-hero h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 7vw, 92px);
+    font-weight: 400;
+}
+
+.gallery-page-hero span {
+    max-width: 650px;
+    margin-top: 25px;
+    line-height: 1.8;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.gallery-page-line {
+    width: 80px;
+    height: 1px;
+    margin-top: 40px;
+    background: currentColor;
+    opacity: 0.4;
+}
+
+
+/* FULL GALLERY SECTIONS */
+
+.full-gallery-section {
+    padding: 100px 7% 120px;
+}
+
+.mentors-full-section {
+    padding-top: 40px;
+}
+
+.full-section-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.full-section-heading p {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.full-section-heading h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 400;
+}
+
+.full-section-heading span {
+    display: block;
+    margin-top: 18px;
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+
+/* GALLERY GRID */
+
+.full-gallery-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+}
+
+
+/* ART CARD */
+
+.full-art-card {
+    position: relative;
+    overflow: hidden;
+    background: #e5ddcf;
+    min-height: 600px;
+    transition: transform 0.4s ease;
+}
+
+.full-art-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* IMAGE */
+
+.full-gallery-img {
+    display: block;
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.full-art-card:hover .full-gallery-img {
+    transform: scale(1.04);
+}
+
+
+/* ART INFORMATION */
+
+.full-art-info {
+    padding: 30px 30px 34px;
+    background: #e5ddcf;
+}
+
+.full-art-info > span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    opacity: 0.55;
+}
+
+.full-art-info h3 {
+    margin: 0 0 12px;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.full-art-info p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.full-art-info small {
+    display: block;
+    margin-bottom: 22px;
+    font-size: 11px;
+    opacity: 0.55;
+}
+
+.full-art-info a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.full-art-info a:hover {
+    opacity: 0.55;
+}
+
+
+/* BACK TO HOME */
+
+.gallery-back-section {
+    padding: 30px 20px 100px;
+    text-align: center;
+}
+
+.back-home-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid rgba(29, 29, 29, 0.35);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: #1d1d1d;
+    color: #efe8dc;
+}
+
+
+/* FOOTER */
+
+.gallery-page .footer {
+    margin-top: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .gallery-page-hero {
+        min-height: 45vh;
+        padding: 130px 25px 70px;
+    }
+
+    .gallery-page-hero h1 {
+        font-size: 52px;
+    }
+
+    .gallery-page-hero span {
+        font-size: 13px;
+    }
+
+    .full-gallery-section {
+        padding: 70px 20px 80px;
+    }
+
+    .full-section-heading {
+        margin-bottom: 40px;
+    }
+
+    .full-section-heading h2 {
+        font-size: 38px;
+    }
+
+    .full-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .full-art-card {
+        min-height: auto;
+    }
+
+    .full-gallery-img {
+        height: 450px;
+    }
+
+    .full-art-info {
+        padding: 25px;
+    }
+
+    .full-art-info h3 {
+        font-size: 26px;
+    }
+
+}
+/* =========================================================
+   ARTIORA GALLERY — MOBILE RESPONSIVE FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Gallery page hero */
+    .gallery-page-hero {
+        min-height: 42vh;
+        padding: 120px 20px 60px;
+    }
+
+    .gallery-page-hero p {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .gallery-page-hero h1 {
+        font-size: 48px;
+        line-height: 1.05;
+    }
+
+    .gallery-page-hero span {
+        max-width: 340px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* Gallery sections */
+    .full-gallery-section {
+        padding: 65px 18px 75px;
+    }
+
+    .full-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .full-section-heading p {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .full-section-heading h2 {
+        font-size: 34px;
+        line-height: 1.15;
+    }
+
+    .full-section-heading span {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* One artwork per row */
+    .full-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+
+    /* Artwork card */
+    .full-art-card {
+        width: 100%;
+        min-height: auto;
+    }
+
+
+    /* Artwork image */
+    .full-gallery-img {
+        width: 100%;
+        height: auto;
+        min-height: 360px;
+        max-height: 520px;
+        object-fit: cover;
+    }
+
+
+    /* Artwork information */
+    .full-art-info {
+        padding: 22px 20px 25px;
+    }
+
+    .full-art-info > span {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .full-art-info h3 {
+        font-size: 25px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .full-art-info p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .full-art-info small {
+        font-size: 10px;
+        margin-bottom: 18px;
+    }
+
+    .full-art-info a {
+        font-size: 11px;
+    }
+
+
+    /* Back button */
+    .gallery-back-section {
+        padding: 10px 20px 75px;
+    }
+
+    .back-home-btn {
+        padding: 13px 24px;
+        font-size: 11px;
+    }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 400px) {
+
+    .gallery-page-hero {
+        padding-top: 110px;
+    }
+
+    .gallery-page-hero h1 {
+        font-size: 42px;
+    }
+
+    .full-gallery-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .full-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .full-gallery-img {
+        min-height: 300px;
+    }
+
 }
